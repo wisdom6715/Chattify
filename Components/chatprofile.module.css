@@ -1,0 +1,13 @@
+.ChatProfile{
+    background-color: #f0f2f5;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 9fr .5fr;
+    margin-right: 1rem;
+    gap: .5rem;
+}
+.menus{
+    display: flex;
+    gap: 1rem;
+}

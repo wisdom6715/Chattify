@@ -1,0 +1,42 @@
+.iconsNav{
+    width: 10%;
+    height: 100%;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.navIcons{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+.iconContainer{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconContainer:hover{
+    background-color: rgb(194, 194, 194);
+}
+.adIcons{
+    display: flex;
+    flex-direction: column;
+    border-top: .15rem solid grey;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+.ProfilePic{
+    width: 2rem;
+    height: 2rem;
+    background-color: aqua;
+    border-radius: 50%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

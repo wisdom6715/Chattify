@@ -1,0 +1,7 @@
+.ChatlistContainer{
+    width: 100%;
+    height: 99%;
+    background-color: white;
+    margin-top: 1rem;
+    overflow-y: scroll;
+}
