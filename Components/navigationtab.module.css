@@ -1,5 +1,5 @@
 .iconsNav{
-    width: 10%;
+    width: 12%;
     height: 100%;
     background-color: #f0f2f5;
     display: flex;
@@ -12,7 +12,7 @@
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .iconContainer{
     width: 2.5rem;
@@ -28,7 +28,7 @@
 .adIcons{
     display: flex;
     flex-direction: column;
-    border-top: .15rem solid grey;
+    border-top: .15rem solid rgb(195, 195, 195);
     padding-top: 1rem;
     gap: 1rem;
 }
@@ -38,5 +38,5 @@
     background-color: aqua;
     border-radius: 50%;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }

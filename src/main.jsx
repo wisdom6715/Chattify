@@ -1,10 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import App from './App'
+import Background from '../Components/Background'
+import Chatwindow from '../Components/Chatwindow'
 import styles from '../Components/body.module.css'
 
+
+const router=createBrowserRouter([
+  {
+    path: '/',  
+    element: <Background />,
+    errorElement: <div>Error 404</div>
+  },
+  {
+    path:'/chats',
+    element: <Chatwindow />
+  }
+])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )

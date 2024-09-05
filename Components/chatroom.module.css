@@ -1,5 +1,5 @@
 .chatRoom{
     background-color: #f0f2f5;
-    display: grid;
-    grid-template-rows: .8fr 9.4fr .8fr;
+    /* display: grid;
+    grid-template-rows: .8fr 9.4fr .8fr; */
 }
