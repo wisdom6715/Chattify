@@ -2,7 +2,7 @@ import style from './chattab.module.css'
 import NavigationTab from "./NavigationTab"
 import Chatlists from './ChatLists'
 import { useState } from 'react'
-export default function ChatTab(){
+export default function ChatTab({setPageSwitch}){
     const[userFilter, setuserFilter]=useState("")
     return <div className={style.chatContainer}>
         <NavigationTab />
@@ -20,7 +20,7 @@ export default function ChatTab(){
                     setuserFilter(e.target.value)
                 }} className={style.chatInput} placeholder='Search.....' value={userFilter} />   
             </div>
-            <Chatlists/>
+            <Chatlists setPageSwitch={setPageSwitch}/>
         </div>
         {/* chatlists here */}
         

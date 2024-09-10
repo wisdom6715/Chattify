@@ -1,5 +1,6 @@
 import style from './chatprofile.module.css'
 import ChatItem from './ChatItem'
+import { useContext, authContext } from 'react'
 export default function ChatProfile(){
     return <div className={style.ChatProfile}>
         <ChatItem />
