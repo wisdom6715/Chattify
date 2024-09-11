@@ -1,19 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, createContext, useEffect } from 'react';
 import style from './login.module.css';
 import { useNavigate } from 'react-router-dom';
+import Chatwindow from './Chatwindow';
+
+export const authContext = createContext(null);
 
 export default function Login() {
+    const [storedInfo, setStoredInfo] = useState({});
     const [userInfo, setUserInfo] = useState({ name: "", password: "" });
     const navigate = useNavigate();
-
-    // Load stored user info from localStorage on component mount
-    useEffect(() => {
-        const storedUserInfo = localStorage.getItem('userInfo');
-        if (storedUserInfo) {
-            setUserInfo(JSON.parse(storedUserInfo));
-            console.log('Loaded user info from localStorage:', storedUserInfo);
-        }
-    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,27 +23,39 @@ export default function Login() {
         navigate('/chats');
     };
 
+    useEffect(() => {
+        const storedUserInfo = localStorage.getItem('userInfo');
+        if (storedUserInfo) {
+            setUserInfo(JSON.parse(storedUserInfo));
+            console.log('Loaded user info from localStorage:', storedUserInfo);
+        }
+    }, []);
     return (
-        <div className={style.generalContainer}>
-            <form className={style.loginContainer} onSubmit={handleSubmit}>
-                <h2>Sign Up</h2>
-                <div className={style.InputContainer}>
-                    <input 
-                        onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}  
-                        value={userInfo.name} 
-                        placeholder='Enter Username' 
-                        required 
-                    />
-                    <input 
-                        onChange={(e) => setUserInfo({ ...userInfo, password: e.target.value })} 
-                        value={userInfo.password} 
-                        placeholder='Enter Password' 
-                        type='password' 
-                        required 
-                    />
-                </div>
-                <button type='submit'>Submit</button>
-            </form>
-        </div>
+        <authContext.Provider value={storedInfo}>
+            <div className={style.generalConatiner}>
+                <form className={style.loginContainer} onSubmit={handleSubmit}>
+                    <h2>Sign Up</h2>
+                    <div className={style.InputContainer}>
+                        <input 
+                            onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}  
+                            value={userInfo.name} 
+                            placeholder='Enter Username' 
+                            required 
+                        />
+                        <input 
+                            onChange={(e) => setUserInfo({ ...userInfo, password: e.target.value })} 
+                            value={userInfo.password} 
+                            placeholder='Enter Password' 
+                            required 
+                        />
+                    </div>
+                    <button type='submit'>Submit</button>
+                </form>
+                {/* <div className={style.Chatwindow}>
+                    Ensure Chatwindow is rendered here
+                    <Chatwindow />
+                </div> */}
+            </div>
+        </authContext.Provider>
     ); 
 }
