@@ -6,13 +6,18 @@ import App from './App'
 import Background from '../Components/Background'
 import Chatwindow from '../Components/Chatwindow'
 import styles from '../Components/body.module.css'
+import Logo from '../Components/Logo'
 
 
 const router=createBrowserRouter([
   {
     path: '/',  
-    element: <Background />,
+    element: <App />,
     errorElement: <div>Error 404</div>
+  },
+  {
+    path:'/login',
+    element: <Background />
   },
   {
     path:'/chats',
